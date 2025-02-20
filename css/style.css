@@ -7,9 +7,9 @@
   --clr-neutral-100: hsl(0,0,0;);
   --clr-neutral-400: hsl(0,0,0;);
 
-  --bg-neutral-900: color: black;
-
-  --ff-primary: 'Rajdhani';
+  --bg-neutral-900: color: black; /* change bg */
+    
+  --ff-primary: 'Courier New'; /* change font */
 
   --ff-heading: var(--ff-primary);
   --ff-body: var(--ff-primary);
@@ -50,7 +50,6 @@
   margin: 0;
   padding: 0;
   font: inherit;
-  
 }
 html:focus-within {
   scroll-behavior: smooth;
@@ -62,6 +61,13 @@ img,
 picture {
   width: 100%;
   display: block;
+}
+nav {
+  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
+}
+nav a {
+  color: #0f0f0f;
 }
 body {
   min-height: 100vh;
@@ -83,19 +89,9 @@ button {
   border: none;
   background-color: inherit;
 }
-li {
-  list-style: none;
-  align-items: center;
-}
 a {
   text-decoration: none;
   color: #5a5a5a;
-}
-nav a {
-  color: #0f0f0f;
-}
-em {
-  font-style: italic;
 }
 dt {
   font-weight: 600;
@@ -104,12 +100,15 @@ dt {
 dd {
   margin-left: 0.75em;
 }
+li {
+  list-style: none;
+  align-items: center;
+}
 li a:where(:hover, :focus), footer li a:where(:hover, :focus) {
   color: #f1f1f1;
 }
-nav {
-  -webkit-transition: background 0.8s;
-  transition: background 0.8s;
+em {
+  font-style: italic;
 }
 footer {
   display: flex;
