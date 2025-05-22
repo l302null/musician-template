@@ -47,14 +47,17 @@
 }
 .music-container {
     background-color: #272727;
+    border-radius: 0.5em 0.5em 0em 0em;
 
     display: flex;
-    position: relative;
+    position: sticky;
+    bottom: 0px;
     z-index: 0;
     overflow: hidden;
 } 
 .img-container {
     position: relative;
+    max-width: 10%;
 }
 .navigation {
     display: flex;
@@ -72,6 +75,12 @@
 }
 .music-info h4 {
     margin: 0;
+}
+.play {
+    z-index: 1;
+}
+.pause {
+    z-index: 1;
 }
 .progress-container {
     background: #0f0f0f;
