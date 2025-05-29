@@ -8,71 +8,56 @@ const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
-const currTime = document.querySelector('#currTime');
-const durTime = document.querySelector('#durTime');
+let touchStartX = 0;
+let touchEndX = 0;
 
-// Song titles
-const songs = ['Just Cant Stop', 'Sync Purge', 'XLR8', 'The Ghosts', 'Quarter Cruncher', 'schwinger',
-	'Carage Drunk', 'Clamp', 'Famous Dex - Japan (Ypliet Denour Remix)', 'Mochi', 'SD - RISE (Ypliet Denour Remix)',
-	'On The News', 'KOMPLVINT - Weapons Activated (Ypliet Denour Remix)',
-	'Lullaby',
+const songs = [
+  'insert song title with Exact Punctuation-and_Spacing',
 ];
 
-// Keep track of song
-let songIndex = 0;
+let trackIndex = 0;
 
-// Initially load song details into DOM
-loadSong(songs[songIndex]);
-
-// Update song details
-function loadSong(song) {
-  title.innerText = song;
-  audio.src = `mus/${song}.mp3`;
-  cover.src = `img/${song}.jpg`;
+// Load track details into DOM
+function loadTrack(trackIndex) {
+  title.innerText = songs[trackIndex];
+  audio.src = `mus/${songs[trackIndex]}.mp3`;
+  cover.src = `art/${songs[trackIndex]}.jpg`;
 }
 
-// Play song
-function playSong() {
+// Play track
+function playTrack() {
   musicContainer.classList.add('play');
-  playBtn.querySelector('i.fas').classList.remove('fa-play');
-  playBtn.querySelector('i.fas').classList.add('fa-pause');
-
+  playBtn.querySelector('img').src = 'img/icon/pause.svg';
+  playBtn.querySelector('img').alt = 'pause';
   audio.play();
 }
 
-// Pause song
-function pauseSong() {
+// Pause track
+function pauseTrack() {
   musicContainer.classList.remove('play');
-  playBtn.querySelector('i.fas').classList.add('fa-play');
-  playBtn.querySelector('i.fas').classList.remove('fa-pause');
-
+  playBtn.querySelector('img').src = 'img/icon/play.svg';
+  playBtn.querySelector('img').alt = 'play';
   audio.pause();
 }
 
-// Previous song
-function prevSong() {
-  songIndex--;
-
-  if (songIndex < 0) {
-    songIndex = songs.length - 1;
-  }
-
-  loadSong(songs[songIndex]);
-
-  playSong();
+// Toggle play/pause
+function togglePlayback() {
+  const isPlaying = musicContainer.classList.contains('play');
+  isPlaying ? pauseTrack() : playTrack();
 }
 
-// Next song
-function nextSong() {
-  songIndex++;
+// Previous track
+function prevTrack() {
+  trackIndex = (trackIndex - 1 + songs.length) % songs.length;
+  loadTrack(trackIndex);
+  playTrack();
+}
 
-  if (songIndex > songs.length - 1) {
-    songIndex = 0;
-  }
-
-  loadSong(songs[songIndex]);
-
-  playSong();
+// Next track
+function nextTrack() {
+  trackIndex = (trackIndex + 1) % songs.length;
+  loadTrack(trackIndex);
+  playTrack();
 }
 
 // Update progress bar
@@ -82,101 +67,52 @@ function updateProgress(e) {
   progress.style.width = `${progressPercent}%`;
 }
 
-// Set progress bar
+// Click to seek
 function setProgress(e) {
   const width = this.clientWidth;
   const clickX = e.offsetX;
   const duration = audio.duration;
-
   audio.currentTime = (clickX / width) * duration;
 }
 
-//get duration & currentTime for Time of song
-function DurTime (e) {
-	const {duration,currentTime} = e.srcElement;
-	var sec;
-	var sec_d;
-
-	// define minutes currentTime
-	let min = (currentTime==null)? 0:
-	 Math.floor(currentTime/60);
-	 min = min <10 ? '0'+min:min;
-
-	// define seconds currentTime
-	function get_sec (x) {
-		if(Math.floor(x) >= 60){
-			
-			for (var i = 1; i<=60; i++){
-				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
-					sec = Math.floor(x) - (60*i);
-					sec = sec <10 ? '0'+sec:sec;
-				}
-			}
-		}else{
-		 	sec = Math.floor(x);
-		 	sec = sec <10 ? '0'+sec:sec;
-		 }
-	} 
-
-	get_sec (currentTime,sec);
-
-	// change currentTime DOM
-	currTime.innerHTML = min +':'+ sec;
-
-	// define minutes duration
-	let min_d = (isNaN(duration) === true)? '0':
-		Math.floor(duration/60);
-	 min_d = min_d <10 ? '0'+min_d:min_d;
-
-
-	 function get_sec_d (x) {
-		if(Math.floor(x) >= 60){
-			
-			for (var i = 1; i<=60; i++){
-				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
-					sec_d = Math.floor(x) - (60*i);
-					sec_d = sec_d <10 ? '0'+sec_d:sec_d;
-				}
-			}
-		}else{
-		 	sec_d = (isNaN(duration) === true)? '0':
-		 	Math.floor(x);
-		 	sec_d = sec_d <10 ? '0'+sec_d:sec_d;
-		 }
-	} 
-
-	// define seconds duration
-	
-	get_sec_d (duration);
-
-	// change duration DOM
-	durTime.innerHTML = min_d +':'+ sec_d;
-		
-};
-
 // Event listeners
-playBtn.addEventListener('click', () => {
-  const isPlaying = musicContainer.classList.contains('play');
+playBtn.addEventListener('click', togglePlayback);
+prevBtn.addEventListener('click', prevTrack);
+nextBtn.addEventListener('click', nextTrack);
+progressContainer.addEventListener('click', setProgress);
+audio.addEventListener('timeupdate', updateProgress);
+audio.addEventListener('ended', nextTrack);
 
-  if (isPlaying) {
-    pauseSong();
-  } else {
-    playSong();
+// Spacebar play/pause
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    togglePlayback();
   }
 });
 
-// Change song
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
+// Load initial track
+loadTrack(trackIndex);
 
-// Time/song update
-audio.addEventListener('timeupdate', updateProgress);
+musicPlayer.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, false);
 
-// Click on progress bar
-progressContainer.addEventListener('click', setProgress);
+musicPlayer.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, false);
 
-// Song ends
-audio.addEventListener('ended', nextSong);
+function handleSwipe() {
+  const swipeThreshold = 50; // Minimum swipe distance (px)
+  const swipeDiff = touchStartX - touchEndX;
 
-// Time of song
-audio.addEventListener('timeupdate',DurTime);
+  // Swipe left (next song)
+  if (swipeDiff > swipeThreshold) {
+    changeTrack(1); // Existing next-track function
+  } 
+  // Swipe right (previous song)
+  else if (swipeDiff < -swipeThreshold) {
+    changeTrack(-1); // Existing prev-track function
+  }
+}
