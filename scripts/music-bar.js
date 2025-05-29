@@ -2,32 +2,44 @@ const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
+const trackClickContainer = document.getElementById('track-click');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
+const currTime = document.querySelector('#currTime');
+const durTime = document.querySelector('#durTime');
 let touchStartX = 0;
 let touchEndX = 0;
 
 const songs = [
-  'insert song title with correct Punctuation-and_Spacing',
+  'The Ghosts',
 ];
 
 let trackIndex = 0;
+let playTimer;
+const THIRTY_SECONDS = 30 * 1000;
 
-// Load track details into DOM
+// Set play/pause UI state
+function setPlayState(isPlaying) {
+  musicContainer.classList.toggle('play', isPlaying);
+  const playIcon = playBtn.querySelector('img');
+  playIcon.src = isPlaying ? '../img/icon/pause.svg' : '../img/icon/play.svg';
+  playIcon.alt = isPlaying ? 'pause' : 'play';
+}
+
+// Load track into player
 function loadTrack(trackIndex) {
   title.innerText = songs[trackIndex];
-  audio.src = `mus/${songs[trackIndex]}.mp3`;
-  cover.src = `art/${songs[trackIndex]}.jpg`;
+  audio.src = `../mus/${songs[trackIndex]}.mp3`;
+  cover.src = `..img/art/theghosts.jpg`;
 }
 
 // Play track
 function playTrack() {
   musicContainer.classList.add('play');
-  playBtn.querySelector('img').src = 'img/icon/pause.svg';
+  playBtn.querySelector('img').src = '../img/icon/pause.svg';
   playBtn.querySelector('img').alt = 'pause';
   audio.play();
 }
@@ -35,7 +47,7 @@ function playTrack() {
 // Pause track
 function pauseTrack() {
   musicContainer.classList.remove('play');
-  playBtn.querySelector('img').src = 'img/icon/play.svg';
+  playBtn.querySelector('img').src = '../img/icon/play.svg';
   playBtn.querySelector('img').alt = 'play';
   audio.pause();
 }
@@ -65,6 +77,18 @@ function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
+  
+  // Update time displays
+  currTime.textContent = formatTime(currentTime);
+  if (duration) {
+    durTime.textContent = formatTime(duration);
+  }
+}
+
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 }
 
 // Click to seek
