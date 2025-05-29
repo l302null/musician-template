@@ -6,13 +6,15 @@
     <meta name="facebook-domain-verification" content="9si79xn9j040iwceek1vxp739rvzul">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mbar.css">
-    <link rel="stylesheet" href="link" rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap">
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon/YD-L.ico?">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon/your-ico.ico?">
     <title>Artist Name</title>
 </head>
 <body>
+<!-- Distributed by Ypliet Denour for use under BSD 3-Clause License. -->
+<!-- Modifications are encouraged but sales of my code, whole or modified, are illegal. -->
+<!-- Equity among artists start with you. - the Silent few -->
+
+    <!-- navigation menu -->
     <header class="primary-header">
         <div id="main-nav" role="navigation" aria-label="Main">
             <nav>
@@ -25,8 +27,10 @@
             </nav>
         </div>
     </header>
+
+    <!-- the middle part -->
     <main>
-        <h1 hidden>SEO tool</h1>
+        <h1 hidden>Page Purpose Here</h1>
         <div class="padding-block-900 even-columns">
             <div>
                 <div>
@@ -42,60 +46,63 @@
             </div>
             <div class="listing">
                 <div class="center">
-                    <button type="button"><a href="https://bandcamp.com/"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album1"></a></button>
+                    <button type="button"><a href="music/album_1.html"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album1"></a></button>
                 </div>
                 <div class="center">
-                    <button type="button"><a href="https://bandcamp.com/"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album2"></a></button>
+                    <button type="button"><a href="music/album_2.html"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album2"></a></button>
                 </div>
                 <div class="center">
-                    <button type="button"><a href="https://bandcamp.com/"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album3"></a></button>
+                    <button type="button"><a href="music/album_3.html"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album3"></a></button>
                 </div>
             </div>
         </div>
-
-        <!-- leave alt tags blank -->
-        <div loading="lazy" class="music-container" id="music-container">
-            <div class="music-info">
-                <h4 id="title"></h4>
-                <div class="progress-container" id="progress-container">
-                    <div class="progress" id="progress"></div>
-                </div>
-            </div>
-            <div>
-                <audio src="mus/Sync_Purge.mp3" id="audio"></audio>
-                <div class="img-container">
-                    <img src="img/art/theghosts.jpg" alt="" id="cover">
-                </div>
-                <div class="nav-container">
-                    <div class="navigation">
-                        <button id="prev" class="action-btn">
-                            <i class="fas fa-backward"><img src="img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
-                        </button>
-                        <button id="play" class="action-btn action-btn-big">
-                            <i class="fas fa-play"><img src="img/icon/play.svg" style="height: 1em;" alt="play"></i>
-                        </button>
-                        <button id="next" class="action-btn">
-                            <i class="fas fa-forward"><img src="img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
-                        </button>
+        <div class=" padding-block-700"></div>
+        <!-- Leave audio tags blank. This is the part that uses javascript. -->
+        <div id='music-bar' class="music-bar" loading="lazy">
+            <div class="music-container" id="music-container">
+                <audio id="audio"></audio>
+                <div id="info-container" class="info-container">
+                    <div class="img-container">
+                        <img id="cover" alt="Album cover">
+                    </div>
+                    <div class="song-info">
+                        <h4 id="title"></h4>
+                        <h5 id="artist"></h5>
                     </div>
                 </div>
+                <div id="controls-container">
+                    <div>
+                        <div id="navigation container" class="nav-container">
+                            <div class="navigation">
+                                <button id="prev" class="action-btn">
+                                    <i class="fas fa-backward"><img src="../img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
+                                </button>
+                                <button id="play" class="action-btn action-btn-big">
+                                    <i class="fas fa-play"><img src="../img/icon/play.svg" style="height: 1em;" alt="play"></i>
+                                </button>
+                                <button id="next" class="action-btn">
+                                    <i class="fas fa-forward"><img src="../img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="funnel-container" class="funnel">
+                    <p>buy here</p>
+                </div>
+            </div>
+            <div class="progress-wrapper">
+                <span id="currTime" class="time-display current-time">00:00</span>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" style="background-color: #f1f1f1;" id="progress"></div>
+                </div>
+                <span id="durTime" class="time-display duration-time">00:00</span>
             </div>
         </div>
-        <script src="music-bar.js"></script>
-        <div class=" padding-block-700"></div>
-        <div>
-            <p>Are you learning to make music but lessons are too expensive?
-                Does your workflow feel monotoneous or frustrating?
-                Is being self taught holding you back from creating the sounds in your head?<br><br>
-
-                These are things i struggled with for years. Enter the <a href="guides.html">GUIDES</a> page (<i>can be 
-                accessed from the footer at any time</i>) for answers to questions you didn't know you could ask. My goal 
-                with the guides page is to contest paywalls a novice writer will run into while navigating the music 
-                industry while also providing industry level talent knowledge that is gatekept by people who may fear 
-                that sharing knowledge will harm their future in entertainment.
-            </p><br>
-        </div>
+        <script src="scripts/music-bar.js"></script>
     </main>
+    
+    <!-- the bottom part -->
     <footer loading="lazy" class="text-neutral-100" id="footer">
         <hr>
         <div class="container">
@@ -121,7 +128,6 @@
                         </ul>
                         <ul>
                             <li><a class="nav-link" href="epk.html">EPK</a></li>
-                            <li><a class="nav-link" href="guides.html">Guides</a></li>
                             <li><a class="nav-link" href="contact.html">Contact</a></li>
                             <li><a class="nav-link" href="privacy.html">Privacy Policy</a></li>
                         </ul>
@@ -133,7 +139,7 @@
                         <input type="email" id="email" name="email">
                         <input type="submit">
                     </form>
-                    <p>&copy; Ypliet Denour</p>
+                    <p>&copy; Artist Name</p>
                 </div>
             </div>
         </div>
