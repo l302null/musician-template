@@ -12,7 +12,7 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 const songs = [
-  'insert song title with Exact Punctuation-and_Spacing',
+  'insert song title with correct Punctuation-and_Spacing',
 ];
 
 let trackIndex = 0;
