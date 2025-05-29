@@ -6,13 +6,15 @@
     <meta name="facebook-domain-verification" content="9si79xn9j040iwceek1vxp739rvzul">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mbar.css">
-    <link rel="stylesheet" href="link" rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap">
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon/YD-L.ico?">
-    <title>the Silent few</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon/your-ico.ico?">
+    <title>Artist Name</title>
 </head>
 <body>
+<!-- Distributed by Ypliet Denour for use under BSD 3-Clause License. -->
+<!-- Modifications are encouraged but sales of my code, whole or modified, are illegal. -->
+<!-- Equity among artists start with you. - the Silent few -->
+
+    <!-- navigation menu -->
     <header class="primary-header">
         <div id="main-nav" role="navigation" aria-label="Main">
             <nav>
@@ -29,24 +31,53 @@
         <h1 hidden>Privacy</h1>
         <div style="max-width: 75%;">
             <br>
-            <p style="font-weight: 700;">Ypliet Denour values anonimity and wishes the same for their audience.</p><br>
-            
-            <p>Email subscribers will not have their emails sold or leaked to the known extent of our security 
-            measures. There are no trackers or cookies on this website and there is no intent to include trackers. 
-            Any tracking embeded in the website is accidental and I encourage this be brought to my attention in 
-            email or in any of my linked direct direct messaging platforms ASAP.<br><br>
-
-            The option to save payment information or store personally identifying data on the main site will not be 
-            allowed as it is an unreasonable risk for consumers. The only active online community for my music is 
-            available on discord, but this may change over the course of 2025.
-            <br>
-            
-            I, Ypliet, apologize for any inconvenience this may cause.<br><br>
-
-
-            Please express any privacy concerns via discord or email and our team will do their best to tackle
-            your problems head on. </p><br>
+            <p style="font-weight: 700;">This section is where you disclose your website's tracking
+                functions.</p><br>
+                <p>Keep it factual and to the point. The default configuration of this 
+                website lacks trackers. Refusal to disclose trackers may lead to legal penalty.</p><br>
         </div>
+        <div id='music-bar' class="music-bar" loading="lazy">
+            <div class="music-container" id="music-container">
+                <audio id="audio"></audio>
+                <div id="info-container" class="info-container">
+                    <div class="img-container">
+                        <img id="cover" alt="Album cover">
+                    </div>
+                    <div class="song-info">
+                        <h4 id="title"></h4>
+                        <h5 id="artist"></h5>
+                    </div>
+                </div>
+                <div id="controls-container">
+                    <div>
+                        <div id="navigation container" class="nav-container">
+                            <div class="navigation">
+                                <button id="prev" class="action-btn">
+                                    <i class="fas fa-backward"><img src="../img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
+                                </button>
+                                <button id="play" class="action-btn action-btn-big">
+                                    <i class="fas fa-play"><img src="../img/icon/play.svg" style="height: 1em;" alt="play"></i>
+                                </button>
+                                <button id="next" class="action-btn">
+                                    <i class="fas fa-forward"><img src="../img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="funnel-container" class="funnel">
+                    <p>buy here</p>
+                </div>
+            </div>
+            <div class="progress-wrapper">
+                <span id="currTime" class="time-display current-time">00:00</span>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" style="background-color: #f1f1f1;" id="progress"></div>
+                </div>
+                <span id="durTime" class="time-display duration-time">00:00</span>
+            </div>
+        </div>
+        <script src="scripts/music-bar.js"></script>
     </main>
     <footer loading="lazy" class="text-neutral-100" id="footer">
         <hr>
@@ -81,7 +112,7 @@
                 </div>
                 <div style="display: flex; flex-direction: column;">
                     <form action="/sign_up.php">
-                        <label for="email">Join Ypliet's mailing list for updates and discounts.</label><br>
+                        <label for="email">Join Artist Names's mailing list for updates and discounts.</label><br>
                         <input type="email" id="email" name="email">
                         <input type="submit">
                     </form>
