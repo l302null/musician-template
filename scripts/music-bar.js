@@ -4,7 +4,6 @@ const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
-const trackClickContainer = document.getElementById('track-click');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
@@ -13,76 +12,151 @@ const durTime = document.querySelector('#durTime');
 let touchStartX = 0;
 let touchEndX = 0;
 
+// Add mp3 files to /mus. 
+// Add their titles with mirrored title capitalization and spacing.
 const songs = [
-  'The Ghosts',
+  'Like That',
+  'Beat Goes',
+  'XLR8',
 ];
 
-let trackIndex = 0;
-let playTimer;
-const THIRTY_SECONDS = 30 * 1000;
+const artists = [
+  'Nuphory',
+  'Krischvn',
+  'Ypliet Denour',
+];
 
-// Set play/pause UI state
-function setPlayState(isPlaying) {
-  musicContainer.classList.toggle('play', isPlaying);
-  const playIcon = playBtn.querySelector('img');
-  playIcon.src = isPlaying ? '../img/icon/pause.svg' : '../img/icon/play.svg';
-  playIcon.alt = isPlaying ? 'pause' : 'play';
-}
+const albumArt = [
+  'like_that.jpg',
+  'beat_goes.jpg',
+  'sync_purge.jpg',
+];
 
-// Load track into player
-function loadTrack(trackIndex) {
+// Load state from localStorage or initialize
+let trackIndex = parseInt(localStorage.getItem('trackIndex')) || 0;
+let isPlaying = localStorage.getItem('isPlaying') === 'true';
+let currentTime = parseFloat(localStorage.getItem('currentTime')) || 0;
+
+function loadTrack(trackIndex, resetPosition = false) {
+  // Show loading state
+  playBtn.querySelector('img').src = '/img/icon/loading.svg';
+  playBtn.querySelector('img').alt = 'loading';
+
   title.innerText = songs[trackIndex];
-  audio.src = `../mus/${songs[trackIndex]}.mp3`;
-  cover.src = `..img/art/theghosts.jpg`;
+  artist.innerText = artists[trackIndex];
+  audio.src = `/mus/${songs[trackIndex]}.mp3`;
+  cover.src = `/img/art/${albumArt[trackIndex]}`;
+
+  const img = new Image();
+  img.onload = function() {
+    cover.src = `/img/art/${albumArt[trackIndex]}`;
+  };
+  img.onerror = function() {
+    cover.src = '/img/icon/default-album.jpg';
+    console.warn(`Album art not found: ${albumArt[trackIndex]}`);
+  };
+  img.src = `/img/art/${albumArt[trackIndex]}`;
+
+  // Save current track to localStorage
+  localStorage.setItem('lastTrack', songs[trackIndex]);
+  localStorage.setItem('trackIndex', trackIndex);
+
+  // Set up event listeners for audio readiness
+  const onCanPlay = () => {
+    audio.removeEventListener('canplay', onCanPlay);
+    
+    // Reset position if skipping or different track, otherwise restore position
+    if (resetPosition || localStorage.getItem('lastTrack') !== songs[trackIndex]) {
+      audio.currentTime = 0;
+      localStorage.setItem('currentTime', 0);
+    } else {
+      audio.currentTime = currentTime;
+    }
+    
+    if (isPlaying) {
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            musicContainer.classList.add('play');
+            playBtn.querySelector('img').src = '/img/icon/pause.svg';
+            playBtn.querySelector('img').alt = 'pause';
+          })
+          .catch(error => {
+            console.error('Auto-play failed:', error);
+            pauseTrack();
+          });
+      }
+    } else {
+      musicContainer.classList.remove('play');
+      playBtn.querySelector('img').src = '/img/icon/play.svg';
+      playBtn.querySelector('img').alt = 'play';
+    }
+  };
+
+  audio.addEventListener('canplay', onCanPlay);
 }
 
-// Play track
 function playTrack() {
-  musicContainer.classList.add('play');
-  playBtn.querySelector('img').src = '../img/icon/pause.svg';
-  playBtn.querySelector('img').alt = 'pause';
-  audio.play();
+  const playPromise = audio.play();
+  
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        musicContainer.classList.add('play');
+        playBtn.querySelector('img').src = '/img/icon/pause.svg';
+        playBtn.querySelector('img').alt = 'pause';
+        isPlaying = true;
+        localStorage.setItem('isPlaying', 'true');
+      })
+      .catch(error => {
+        console.error('Playback failed:', error);
+        pauseTrack();
+      });
+  }
 }
 
-// Pause track
 function pauseTrack() {
   musicContainer.classList.remove('play');
-  playBtn.querySelector('img').src = '../img/icon/play.svg';
+  playBtn.querySelector('img').src = '/img/icon/play.svg';
   playBtn.querySelector('img').alt = 'play';
   audio.pause();
+  isPlaying = false;
+  localStorage.setItem('isPlaying', 'false');
 }
 
-// Toggle play/pause
 function togglePlayback() {
-  const isPlaying = musicContainer.classList.contains('play');
-  isPlaying ? pauseTrack() : playTrack();
+  if (musicContainer.classList.contains('play')) {
+    pauseTrack();
+  } else {
+    playTrack();
+  }
 }
 
-// Previous track
 function prevTrack() {
   trackIndex = (trackIndex - 1 + songs.length) % songs.length;
-  loadTrack(trackIndex);
-  playTrack();
+  localStorage.setItem('trackIndex', trackIndex);
+  loadTrack(trackIndex, true); // Reset position when skipping
 }
 
-// Next track
 function nextTrack() {
   trackIndex = (trackIndex + 1) % songs.length;
-  loadTrack(trackIndex);
-  playTrack();
+  localStorage.setItem('trackIndex', trackIndex);
+  loadTrack(trackIndex, true); // Reset position when skipping
 }
 
-// Update progress bar
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
   
-  // Update time displays
   currTime.textContent = formatTime(currentTime);
   if (duration) {
     durTime.textContent = formatTime(duration);
   }
+  
+  localStorage.setItem('currentTime', currentTime);
 }
 
 function formatTime(seconds) {
@@ -91,12 +165,12 @@ function formatTime(seconds) {
   return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 }
 
-// Click to seek
 function setProgress(e) {
   const width = this.clientWidth;
   const clickX = e.offsetX;
   const duration = audio.duration;
   audio.currentTime = (clickX / width) * duration;
+  localStorage.setItem('currentTime', audio.currentTime);
 }
 
 // Event listeners
@@ -107,7 +181,6 @@ progressContainer.addEventListener('click', setProgress);
 audio.addEventListener('timeupdate', updateProgress);
 audio.addEventListener('ended', nextTrack);
 
-// Spacebar play/pause
 document.addEventListener('keydown', (e) => {
   if (e.code === 'Space' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
     e.preventDefault();
@@ -115,28 +188,49 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Load initial track
-loadTrack(trackIndex);
+window.addEventListener('beforeunload', () => {
+  localStorage.setItem('trackIndex', trackIndex);
+  localStorage.setItem('isPlaying', isPlaying);
+  localStorage.setItem('currentTime', audio.currentTime);
+});
 
-musicPlayer.addEventListener('touchstart', (e) => {
+musicContainer.addEventListener('touchstart', (e) => {
   touchStartX = e.changedTouches[0].screenX;
 }, false);
 
-musicPlayer.addEventListener('touchend', (e) => {
+musicContainer.addEventListener('touchend', (e) => {
   touchEndX = e.changedTouches[0].screenX;
   handleSwipe();
 }, false);
 
 function handleSwipe() {
-  const swipeThreshold = 50; // Minimum swipe distance (px)
+  const swipeThreshold = 50;
   const swipeDiff = touchStartX - touchEndX;
 
-  // Swipe left (next song)
   if (swipeDiff > swipeThreshold) {
-    changeTrack(1); // Existing next-track function
-  } 
-  // Swipe right (previous song)
-  else if (swipeDiff < -swipeThreshold) {
-    changeTrack(-1); // Existing prev-track function
+    nextTrack();
+  } else if (swipeDiff < -swipeThreshold) {
+    prevTrack();
   }
 }
+
+// Load initial track (don't reset position)
+loadTrack(trackIndex);
+
+// Handle browser autoplay restrictions
+document.addEventListener('click', function initialPlay() {
+  if (isPlaying && audio.paused) {
+    audio.play()
+      .then(() => {
+        musicContainer.classList.add('play');
+        playBtn.querySelector('img').src = '/img/icon/pause.svg';
+        playBtn.querySelector('img').alt = 'pause';
+      })
+      .catch(error => {
+        console.error('Resume playback failed:', error);
+        pauseTrack();
+      });
+  }
+  // Remove after first interaction
+  document.removeEventListener('click', initialPlay);
+}, { once: true });
