@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta name="facebook-domain-verification" content="9si79xn9j040iwceek1vxp739rvzul">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mbar.css">
+    <link rel="stylesheet" href="link" rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon/YD-L.ico?">
+    <title>the Silent few</title>
+</head>
+<body>
+    <header class="primary-header">
+        <div id="main-nav" role="navigation" aria-label="Main">
+            <nav>
+                <ul class="nav-list" id="primary-nav">
+                    <li><button type="button"><a title="Home" href="../index.html"><img style="width: 3em;" src="../img/ypliet/YD.svg" alt="Home"></a></button></li>
+                    <li><a class="nav-link" href="../music.html">Music</a></li>
+                    <li><a class="nav-link" href="../merch.html">Merch</a></li>
+                    <li><a class="nav-link" href="../shows.html">Shows</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="insomnia_album" class="padding-block-700 shelf">
+            <div id="bio" class="uneven-columns">
+                <div class="fullscreen-paragraph">
+                    <p>"Album Title" (2002) made people look in that direction.</p>
+                </div>
+                <div class="even-columns center">
+                    <div class="container"><dl>Click here to support:</dl></div>
+                    <div><button type="button"><a href="https://yplietdenour.com/music"><img style="max-width: 15rem;" src="../img/art/eateotthecaretaker.jpg"></a></button></div>
+                </div><br>
+            </div><hr>
+
+            <div id="details" class="uneven-columns tracklist">
+                <div id="album" class="even-columns">
+                    <div id="description">
+                        <dl style="font-weight: 500;"><u>Name</u></dl>
+                        <dt>Album Type:</dt>
+                        <dd>Single? EP? LP?</dd>
+                        <dt>Released:</dt>
+                        <dd>Dec. 00, 1999</dd>
+                    </div>
+                    <div>
+                        <dl id="tracklist" style="font-weight: 500;"><u>Tracklist</u></dl>
+                        <ol id="track-click">
+                            <li data-index="0">Like That</li>
+                            <li data-index="1">Beat Goes</li>
+                            <li data-index="2">XLR8</li>
+                        </ol>
+                    </div>
+                </div><br>
+
+                <div id="stream_download" class="container">
+                    <div>
+                        <dl style="font-weight: 500;">Save/Download<hr style="width: 3.75em;"></dl>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <p>Discover more<hr style="width: fit-content;"></p><br>
+        <div class="listing padding-block-700" id="discography">
+            <div class="center"><button type="button"><a href="../music/album_1.html"><image style="max-width: 12.5rem;" src="../img/art/bottomlesspitdeathgrips.jpg" alt="album 1"></a></button></div>
+            <div class="center"><button type="button"><a href="../music/album_2.html"><image style="max-width: 12.5rem;" src="../img/art/eateotthecaretaker.jpg" alt="album 2"></a></button></div>
+            <div class="center"><button type="button"><a href="../music/album_3.html"><image style="max-width: 12.5rem;" src="../img/art/afterfilmorecountyvansire.jpg" alt="album 3"></a></button></div>
+        </div><br>
+        
+        <!-- Leave audio tags blank. Add songs inside "music-bar.js" file. This is the part that uses javascript. -->
+        <div id='music-bar' class="music-bar" loading="lazy">
+            <div class="music-container" id="music-container">
+                <audio id="audio"></audio>
+                <div id="info-container" class="info-container">
+                    <div class="img-container">
+                        <img id="cover" alt="Album cover">
+                    </div>
+                    <div class="song-info">
+                        <h4 id="title"></h4>
+                        <h5 id="artist"></h5>
+                    </div>
+                </div>
+                <div id="controls-container">
+                    <div>
+                        <div id="navigation container" class="nav-container">
+                            <div class="navigation">
+                                <button id="prev" class="action-btn">
+                                    <i class="fas fa-backward"><img src="../img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
+                                </button>
+                                <button id="play" class="action-btn action-btn-big">
+                                    <i class="fas fa-play"><img src="../img/icon/play.svg" style="height: 1em;" alt="play"></i>
+                                </button>
+                                <button id="next" class="action-btn">
+                                    <i class="fas fa-forward"><img src="../img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="funnel-container" class="funnel">
+                    <p>buy here</p>
+                </div>
+            </div>
+            <div class="progress-wrapper">
+                <span id="currTime" class="time-display current-time">00:00</span>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" style="background-color: #f1f1f1;" id="progress"></div>
+                </div>
+                <span id="durTime" class="time-display duration-time">00:00</span>
+            </div>
+        </div>
+        <script src="../scripts/music-bar.js"></script>
+    </main>
+    <!-- the bottom part -->
+    </main>
+    <footer loading="lazy" class="text-neutral-100" id="footer">
+        <hr>
+        <div class="container">
+            <div class="even-columns">
+                <div>
+                    <a href="../index.html"><img src="../img/ypliet/ypliet_denour_logo_linear_V1.svg" style="height: 10svh;" alt="home"></a>
+                    <ul class="center">
+                        <li><button type="button"><a title="facebook" href="https://www.facebook.com/yplietdenour" target="_blank"><img class="icon" src="../img/icon/facebook.svg" alt="facebook"></a></button></li>
+                        <li><button type="button"><a title="instagram" href="https://www.instagram.com/yplietdenour/" target="_blank"><img class="icon" src="../img/icon/instagram.svg" alt="instagram"></a></button></li>
+                        <li><button type="button"><a title="twitter" href="https://twitter.com/yplietdenour" target="_blank"><img class="icon" src="../img/icon/twitter.svg" alt="twitter"></a></button></li>
+                        <li><button type="button"><a title="discord" href="https://discord.gg/JT3PsUjxNv" target="_blank"><img class="icon" src="../img/icon/discord.svg" alt="discord"></a></button></li>
+                        <li><button type="button"><a title="soundcloud" href="https://soundcloud.com/yplietdenour" target="_blank"><img class="icon" src="../img/icon/soundcloud.svg" alt="soundcloud"></a></button></li>
+                    </ul>
+                </div>
+                <div>
+                    <nav id=footer-nav aria-label="Footer" class="footer-nav center" style="align-content: center;">
+                        <ul>
+                            <li><a class="nav-link" href="../index.html">Home</a></li>
+                            <li><a class="nav-link" href="../music.html">Music</a></li>
+                            <li><a class="nav-link" href="../merch.html">Merch</a></li>
+                            <li><a class="nav-link" href="../shows.html">Shows</a></li>
+                        </ul>
+                        <ul>
+                            <li><a class="nav-link" href="../epk.html">EPK</a></li>
+                            <li><a class="nav-link" href="../contact.html">Contact</a></li>
+                            <li><a class="nav-link" href="../privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="center">
+                    <div>
+                        <form action="../sign_up.php">
+                            <label for="email">Join artist_names's mailing list for updates and discounts.</label><br>
+                            <input type="email" id="email" name="email">
+                            <input type="submit">
+                        </form>
+                        <p>&copy; artist_name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
