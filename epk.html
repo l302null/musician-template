@@ -137,7 +137,9 @@
         <p>Shows - <a href="mailto:booking@yplietdenour.com" target="_blank">booking@yplietdenour.com</a><br>
             Management - <a href="mailto:mgmt@yplietdenour.com" target="_blank">mgmt@yplietdenour.com</a></p>
     </div>
-    <div id='music-bar' class="music-bar" loading="lazy">
+        
+        <!-- Leave audio tags blank. Add songs inside "music-bar.js" file. This is the part that uses javascript. -->
+        <div id='music-bar' class="music-bar" loading="lazy">
             <div class="music-container" id="music-container">
                 <audio id="audio"></audio>
                 <div id="info-container" class="info-container">
@@ -167,7 +169,7 @@
                     </div>
                 </div>
                 <div id="funnel-container" class="funnel">
-                    <p>buy here</p>
+                    <i class=""><img src="../img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy">
                 </div>
             </div>
             <div class="progress-wrapper">
@@ -180,6 +182,7 @@
         </div>
         <script src="scripts/music-bar.js"></script>
     </main>
+
     <!-- the bottom part -->
     <footer loading="lazy" class="text-neutral-100" id="footer">
         <div class="container">
