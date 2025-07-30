@@ -31,7 +31,10 @@
         <h1 hidden>artist_name Tour Shows Rave</h1>
             <div class="padding-block-700">
                 <!-- change this to literally anything-->
-                <center><p>| CURRENT TOUR |</p></center><br><hr><br>
+                <p style="text-align: center;"><b>| CURRENT TOUR |</b></p>
+                <br>
+                <hr>
+                <br>
                 <div class="even-columns">
                     <!-- do not edit the arrangement of the div/dl/dt. 
                      they stack on mobile as is and span the width on desktop if left alone.-->
@@ -77,6 +80,8 @@
         data-locale="en" data-other-artists="on" data-share-button="on" data-country-filter="on" data-rsvp="on" data-request-show="on" data-past-events="off" 
         data-past-events-offtour="off" data-remind-me="off"></a><script src='//widget-app.songkick.com/injector/10305932'></script>
         <!-- End widget. -->
+        
+        <!-- Leave audio tags blank. Add songs inside "music-bar.js" file. This is the part that uses javascript. -->
         <div id='music-bar' class="music-bar" loading="lazy">
             <div class="music-container" id="music-container">
                 <audio id="audio"></audio>
@@ -107,7 +112,7 @@
                     </div>
                 </div>
                 <div id="funnel-container" class="funnel">
-                    <p>buy here</p>
+                    <i class=""><img src="../img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy">
                 </div>
             </div>
             <div class="progress-wrapper">
