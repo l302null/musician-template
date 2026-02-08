@@ -2,24 +2,26 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1.0">
-    <meta name="facebook-domain-verification" content="9si79xn9j040iwceek1vxp739rvzul">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mbar.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon/your-ico.ico?">
-    <title>Artist Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon/icon.ico?">
+    <title>Artist Name | Home Page</title>
 </head>
 <body>
 <!-- Distributed by Ypliet Denour for use under BSD 3-Clause License. -->
 <!-- Modifications are encouraged but sales of my code, whole or modified, are illegal. -->
-<!-- Equity among artists start with you. - the Silent few -->
+<!-- Equity among artists start with you. - Artist Name  |  | page name -->
 
     <!-- navigation menu -->
     <header class="primary-header">
         <div id="main-nav" role="navigation" aria-label="Main">
             <nav>
                 <ul class="nav-list" id="primary-nav">
-                    <li><button type="button"><a title="Home" href="index.html"><img style="width: 3em;" src="img/logo/_.svg" alt="Home"></a></button></li>
+                    <li><a title="Home" href="index.html"><img style="width: 3em;" src="img/logo/_.svg" alt="Home"></a></li>
                     <li><a class="nav-link" href="music.html">Music</a></li>
                     <li><a class="nav-link" href="merch.html">Merch</a></li>
                     <li><a class="nav-link" href="shows.html">Shows</a></li>
@@ -30,72 +32,82 @@
 
     <!-- the middle part -->
     <main>
-        <h1 hidden>Page Purpose Here</h1>
+        <h1>Page Purpose Here</h1>
         <div class="padding-block-900 even-columns">
             <div>
                 <div>
-                    <p style="font-family: courier"> Esoterics are a specific kind of thrill.<br> 
-                    Believe in yourself and for what.<br>
-                    Find your pleasure in others.<br>Desire <a href="https://www.youtube.com/watch?v=10AQHde6LsA">chains</a> of the earth.<br>
-                    Do not create to <a href="https://youtu.be/NZ-vBhGk9F4?si=HuL-vzcrfFlRm7EU">disrupt</a> <br>and when all else fails fall in line.<br>
-                    Life does not get better.<br> It is as good as it should be.<br><br>
-
-                    Forfeit monochromatic ideals and I will listen to your call.<br>
-                    - The Silent Few</p><br>
+                    <p style="font-family: courier">This is where my bio goes. The longer, the better. If I wish to 
+                        trade volume for accuracy, I would craft 3-5 keyword-rich paragraphs, totaling 300-500 words 
+                        across the entire home page. I start with the words that describe what my audience seeks out 
+                        and then I work my way toward things my fans know and love about me.
+                    </p>
+                    <br>
+                    <p>The paragrpah tag will auto-space lines. the BREAK <!-- <br> -->tag will manually space lines. 
+                    More paragraph tags are prefered over double break tags. Anchor <!-- <a></a> --> tags can embed 
+                    links and downloads into text. Insert text <a>inside of an anchor tag</a> and use 
+                    <a href="https://github.com/l302null/musician-template">REFERENCE/href with a URL</a> to link to 
+                    websites and html pages, or use <a href="mus/Inferno Drive.mp3" download="">href with a file & 
+                    download element</a> to provide direct downloads.</p>
                 </div>
             </div>
-            <div class="listing">
+            <div class="listing" title="Container for Artist Name  | 's Album Streaming Pages with links to Streaming Platforms">
                 <div class="center">
-                    <button type="button"><a href="music/album_1.html"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album1"></a></button>
+                    <a href="music/album_1.html"><image style="max-width: 16rem;" src="img/art/bottomlesspitdeathgrips.jpg" alt="album1"></a>
                 </div>
                 <div class="center">
-                    <button type="button"><a href="music/album_2.html"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album2"></a></button>
+                    <a href="music/album_2.html"><image style="max-width: 16rem;" src="img/art/eateotthecaretaker.jpg" alt="album2"></a>
                 </div>
                 <div class="center">
-                    <button type="button"><a href="music/album_3.html"><image style="max-width: 16rem;" src="img/art/_.jpg" alt="album3"></a></button>
+                    <a href="music/album_3.html"><image style="max-width: 16rem;" src="img/art/afterfilmorecountyvansire.jpg" alt="album3"></a>
                 </div>
             </div>
         </div>
         <div class=" padding-block-700"></div>
 
-        <!-- Leave audio tags blank. Add songs inside "music-bar.js" file. This is the part that uses javascript. -->
-        <div id='music-bar' class="music-bar" loading="lazy">
+        <!-- Read "what am i looking at" in /.help-documentation -->
+        <div class="music-bar">
             <div class="music-container" id="music-container">
                 <audio id="audio"></audio>
                 <div id="info-container" class="info-container">
                     <div class="img-container">
-                        <img id="cover" alt="Album cover">
+                        <img id="cover" src="img/art/syncpurge.jpg" loading="lazy" alt="Album cover">
                     </div>
                     <div class="song-info">
                         <h4 id="title"></h4>
-                        <h5 id="artist"></h5>
+                        <p id="artist" style="margin: 0rem;">Ypliet Denour</p>
                     </div>
                 </div>
                 <div id="controls-container">
                     <div>
-                        <div id="navigation container" class="nav-container">
+                        <div id="navigation-container" class="nav-container">
                             <div class="navigation">
+                                <button id="shuffle" class="action-btn">
+                                    <i class="fas fa-random"><img src="img/icon/shuffle.svg" style="width: 0.85em;" alt="shuffle"></i>
+                                </button>
                                 <button id="prev" class="action-btn">
-                                    <i class="fas fa-backward"><img src="../img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
+                                    <i class="fas fa-backward"><img src="img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
                                 </button>
                                 <button id="play" class="action-btn action-btn-big">
-                                    <i class="fas fa-play"><img src="../img/icon/play.svg" style="height: 1em;" alt="play"></i>
+                                    <i class="fas fa-play"><img src="img/icon/play.svg" style="height: 1em;" alt="play"></i>
                                 </button>
                                 <button id="next" class="action-btn">
-                                    <i class="fas fa-forward"><img src="../img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                    <i class="fas fa-forward"><img src="img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                </button>
+                                <button id="repeat" class="action-btn">
+                                    <i class="fas fa-repeat "><img src="img/icon/repeat.svg" style="height: 0.85em;" alt="repeat"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="funnel-container" class="funnel">
-                    <i class=""><img src="../img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy">
+                    <i class=""><img src="img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy"></i>
                 </div>
             </div>
             <div class="progress-wrapper">
                 <span id="currTime" class="time-display current-time">00:00</span>
                 <div class="progress-container" id="progress-container">
-                    <div class="progress" style="background-color: #f1f1f1;" id="progress"></div>
+                    <div class="progress" style="background-color: #0f4081;" id="progress"></div>
                 </div>
                 <span id="durTime" class="time-display duration-time">00:00</span>
             </div>
@@ -108,14 +120,14 @@
         <div class="container">
             <div class="even-columns">
                 <div>
-                    <a href="index.html"><img draggable="false" src="img/logo/_.svg" style="height: 10svh;" alt="home"></a>
+                    <a href="index.html"><img src="img/artist/.svg" draggable="false" loading="lazy" style="height: 10svh;" alt="home"></a>
                     <ul class="center">
-                        <li><button type="button"><a title="facebook" href="https://www.facebook.com/" target="_blank"><img class="icon" src="img/icon/facebook.svg" alt="facebook"></a></button></li>
-                        <li><button type="button"><a title="instagram" href="https://www.instagram.com//" target="_blank"><img class="icon" src="img/icon/instagram.svg" alt="instagram"></a></button></li>
-                        <li><button type="button"><a title="twitter" href="https://twitter.com/" target="_blank"><img class="icon" src="img/icon/twitter.svg" alt="X"></a></button></li>
-                        <li><button type="button"><a title="twitter" href="https://bsky.app/profile/.bsky.social" target="_blank"><img class="icon" src="img/icon/bluesky.svg" alt="bluesky"></a></button></li>
-                        <li><button type="button"><a title="discord" href="https://discord.gg/" target="_blank"><img class="icon" src="img/icon/youtube.svg" alt="youtube"></a></button></li>
-                        <li><button type="button"><a title="soundcloud" href="https://soundcloud.com/" target="_blank"><img class="icon" src="img/icon/spotify.svg" alt="spotify"></a></button></li>
+                        <li><a title="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon/facebook.svg" class="icon" loading="lazy" alt="facebook"></a></li>
+                        <li><a title="instagram" href="https://www.instagram.com//" target="_blank" rel="noopener noreferrer"><img src="img/icon/instagram.svg" class="icon" loading="lazy" alt="instagram"></a></li>
+                        <li><a title="twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon/twitter.svg" class="icon" loading="lazy" alt="X"></a></li>
+                        <li><a title="twitter" href="https://bsky.app/profile/.bsky.social" target="_blank" rel="noopener noreferrer"><img src="img/icon/bluesky.svg" class="icon" loading="lazy" alt="bluesky"></a></li>
+                        <li><a title="discord" href="https://discord.gg/" target="_blank" rel="noopener noreferrer"><img src="img/icon/discord.svg" class="icon" loading="lazy" alt="discord"></a></li>
+                        <li><a title="soundcloud" href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon/soundcloud.svg" class="icon" loading="lazy" alt="soundcloud"></a></li>
                     </ul>
                 </div>
                 <div>
@@ -135,11 +147,11 @@
                 </div>
                 <div style="display: flex; flex-direction: column;">
                     <form action="/sign_up.php">
-                        <label for="email">Join Artist Names's mailing list for updates and discounts.</label><br>
+                        <label for="email">Join Artist Name  | s's mailing list for updates and discounts.</label><br>
                         <input type="email" id="email" name="email">
                         <input type="submit">
                     </form>
-                    <p>&copy; Artist Name</p>
+                    <p>&copy; Artist Name  | </p>
                 </div>
             </div>
         </div>

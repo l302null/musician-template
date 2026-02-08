@@ -1,30 +1,74 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="96.000000pt" height="96.000000pt" viewBox="0 0 96.000000 96.000000"
- preserveAspectRatio="xMidYMid meet">
-<metadata>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.0"
+   width="96.000000pt"
+   height="96.000000pt"
+   viewBox="0 0 96.000000 96.000000"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg10"
+   sodipodi:docname="shuffle.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="true"
+     inkscape:zoom="4.5796213"
+     inkscape:cx="-6.55076"
+     inkscape:cy="51.095928"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1712"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10">
+    <inkscape:grid
+       type="xygrid"
+       id="grid290" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2">
 Created by potrace 1.10, written by Peter Selinger 2001-2011
 </metadata>
-<g transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M690 827 l0 -45 -47 -11 c-84 -21 -169 -85 -223 -169 l-15 -23 -38
-50 c-69 90 -133 127 -232 132 l-60 4 0 -45 0 -44 47 -3 c27 -1 61 -9 77 -17
-33 -17 101 -94 128 -143 17 -32 17 -34 0 -66 -27 -49 -95 -126 -128 -143 -16
--8 -50 -16 -77 -17 l-47 -3 0 -44 0 -45 60 3 c120 7 185 57 305 238 84 126
-130 178 182 205 58 30 68 26 68 -27 l0 -46 48 36 c26 20 73 53 104 73 31 21
-57 40 57 43 0 3 -19 17 -42 32 -23 16 -70 48 -104 74 l-63 45 0 -44z m93 -72
-c20 -14 37 -30 37 -35 0 -10 -69 -60 -83 -60 -4 0 -21 10 -37 22 -29 21 -30
-21 -77 3 -60 -23 -122 -86 -198 -200 -76 -115 -119 -169 -153 -191 -26 -17
--27 -17 -12 1 8 10 27 32 42 49 15 17 40 54 55 83 l28 52 -22 44 c-12 24 -43
-71 -69 103 -54 66 -35 56 43 -23 28 -29 58 -53 65 -53 17 1 35 16 82 70 55 62
-92 88 152 106 28 8 60 24 69 34 23 26 33 25 78 -5z"/>
-<path d="M472 376 l-30 -55 48 -45 c54 -51 89 -70 153 -87 45 -11 46 -12 49
--54 l3 -43 95 69 c52 38 99 71 105 74 7 3 6 7 -1 10 -6 3 -54 37 -105 74 l-94
-69 -3 -44 c-2 -31 -8 -44 -18 -44 -30 0 -93 40 -132 85 l-40 46 -30 -55z m164
--106 c32 -11 39 -10 67 10 30 23 31 23 64 5 66 -36 66 -54 -1 -90 -35 -19 -36
--19 -58 2 -13 11 -47 28 -77 38 -59 19 -139 84 -127 103 4 7 22 0 51 -22 24
--19 61 -40 81 -46z"/>
-</g>
+  <g
+     transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+     fill="#000000"
+     stroke="none"
+     id="g8"
+     style="fill:#f1f1f1;fill-opacity:1"
+     inkscape:export-filename="shuffle.svg"
+     inkscape:export-xdpi="45.714287"
+     inkscape:export-ydpi="45.714287">
+    <path
+       d="M 675,735 H 637.5 C 450,735 262.5,360 112.5,360 L 75,359 v -74 h 37.5 c 187.5,0 375,375 525,375 H 675 V 585 L 862.5,697.5 675,810 Z"
+       id="path4"
+       sodipodi:nodetypes="cccccccccccc"
+       style="fill:#f1f1f1;fill-opacity:1" />
+    <path
+       id="path577"
+       style="fill:#f1f1f1;fill-opacity:1"
+       d="M 675,810 V 735 H 637.5 C 450.00019,735 262.49985,360 112.5,360 L 75,359.00391 V 285 h 37.5 c 187.49981,0 375.00015,375 525,375 H 675 V 585 L 862.5,697.5 Z M 75,735 V 660.99609 L 112.5,660 c 74.99993,0 150,-75 150,-75 l 52.5,45 c 0,0 -90.00011,105 -202.5,105 z M 502.5,450 450,397.5 c 0,0 75.00011,-112.5 187.5,-112.5 H 675 V 210 L 862.5,322.5 675,435 v -75 h -37.5 c -74.99992,0 -135,90 -135,90 z"
+       inkscape:export-filename="shuffle.svg"
+       inkscape:export-xdpi="45.714287"
+       inkscape:export-ydpi="45.714287"
+       sodipodi:nodetypes="ccscccsscccccccccscccscccccsc" />
+  </g>
+  <g
+     transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+     fill="#000000"
+     stroke="none"
+     id="g1140"
+     style="fill:#f1f1f1;fill-opacity:1" />
 </svg>

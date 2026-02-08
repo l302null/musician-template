@@ -1,6 +1,6 @@
 /* Distributed by Ypliet Denour for use under BSD 3-Clause License. */
 /* Modifications are encouraged but sales of my code, whole or modified, are illegal. */
-/* Equity among artists start with you. - the Silent few */
+/* Equity among artists start with you. - Artist Name  |  | page name */
 
 .music-bar {
     position: sticky;
@@ -167,11 +167,12 @@ h4 {
     background: #0f0f0f;
     cursor: pointer;
     height: 5px;
-    width: 100%; /* Take full width */
+    width: 100%; /* Ypliet Denour */
     margin: 0;
     flex: 1 1 1;
 }
 .progress {
+    background-color: #f1f1f1;
     height: 100%;
     width: 0%;
     transition: width 0.1s linear;

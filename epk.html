@@ -2,24 +2,26 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1.0">
-    <meta name="facebook-domain-verification" content="9si79xn9j040iwceek1vxp739rvzul">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mbar.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon/your-ico.ico?">
-    <title>Artist Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon/icon.ico?">
+    <title>Artist Name | Official EPK</title>
 </head>
 <body>
     <header class="primary-header">
         <nav>
-            <button type="button"><a title="Home" href="index.html"><img style="width: 3em;" src="img/ypliet/yd.svg" alt="Home"></a></button>
+            <a title="Home" href="index.html"><img style="width: 3em;" src="img/ypliet/yd.svg" alt="Home"></a>
         </nav>
     </header>
     <main>
-        <h1 hidden>Ypliet Denour</h1>
+        <h1>Ypliet Denour</h1>
 
         <!-- soundcloud was written by morons. please take it up with them for iframe issues. thanks.-->
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2027021924%3Fsecret_token%3Ds-wN1aXvOwcaf&color=%23b700ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/yplietdenour" title="ypliet denour" target="_blank" style="color: #cccccc; text-decoration: none;">ypliet denour</a> · <a href="https://soundcloud.com/yplietdenour/2025-mix/s-wN1aXvOwcaf" title="2025 Mix" target="_blank" style="color: #cccccc; text-decoration: none;">2025 Mix</a></div>
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2027021924%3Fsecret_token%3Ds-wN1aXvOwcaf&color=%23b700ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/" title="ypliet denour" target="_blank" style="color: #cccccc; text-decoration: none;">ypliet denour</a> · <a href="https://soundcloud.com//2025-mix/s-wN1aXvOwcaf" title="2025 Mix" target="_blank" style="color: #cccccc; text-decoration: none;">2025 Mix</a></div>
         <div class="padding-block-700">
             <p> Ypliet Denour uses a fast paced, multi-format style of mixing which is most at home
                 on the main stage.<br>
@@ -134,48 +136,54 @@
     </div><hr>
     <div class="padding-block-700" style="margin: 1em;">
         <h6 style="font-weight: 600;">Contact</h6>
-        <p>Shows - <a href="mailto:booking@yplietdenour.com" target="_blank">booking@yplietdenour.com</a><br>
-            Management - <a href="mailto:mgmt@yplietdenour.com" target="_blank">mgmt@yplietdenour.com</a></p>
+        <p>Shows - <a href="mailto:booking@.com" target="_blank">booking@.com</a><br>
+            Management - <a href="mailto:mgmt@.com" target="_blank">mgmt@.com</a></p>
     </div>
         
-        <!-- Leave audio tags blank. Add songs inside "music-bar.js" file. This is the part that uses javascript. -->
-        <div id='music-bar' class="music-bar" loading="lazy">
+        <!-- Read "what am i looking at" in /.help-documentation -->
+        <div class="music-bar">
             <div class="music-container" id="music-container">
                 <audio id="audio"></audio>
                 <div id="info-container" class="info-container">
                     <div class="img-container">
-                        <img id="cover" alt="Album cover">
+                        <img id="cover" src="img/art/syncpurge.jpg" loading="lazy" alt="Album cover">
                     </div>
                     <div class="song-info">
                         <h4 id="title"></h4>
-                        <h5 id="artist"></h5>
+                        <p id="artist" style="margin: 0rem;">Ypliet Denour</p>
                     </div>
                 </div>
                 <div id="controls-container">
                     <div>
-                        <div id="navigation container" class="nav-container">
+                        <div id="navigation-container" class="nav-container">
                             <div class="navigation">
+                                <button id="shuffle" class="action-btn">
+                                    <i class="fas fa-random"><img src="img/icon/shuffle.svg" style="width: 0.85em;" alt="shuffle"></i>
+                                </button>
                                 <button id="prev" class="action-btn">
-                                    <i class="fas fa-backward"><img src="../img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
+                                    <i class="fas fa-backward"><img src="img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
                                 </button>
                                 <button id="play" class="action-btn action-btn-big">
-                                    <i class="fas fa-play"><img src="../img/icon/play.svg" style="height: 1em;" alt="play"></i>
+                                    <i class="fas fa-play"><img src="img/icon/play.svg" style="height: 1em;" alt="play"></i>
                                 </button>
                                 <button id="next" class="action-btn">
-                                    <i class="fas fa-forward"><img src="../img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                    <i class="fas fa-forward"><img src="img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                </button>
+                                <button id="repeat" class="action-btn">
+                                    <i class="fas fa-repeat "><img src="img/icon/repeat.svg" style="height: 0.85em;" alt="repeat"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="funnel-container" class="funnel">
-                    <i class=""><img src="../img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy">
+                    <i class=""><img src="img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy"></i>
                 </div>
             </div>
             <div class="progress-wrapper">
                 <span id="currTime" class="time-display current-time">00:00</span>
                 <div class="progress-container" id="progress-container">
-                    <div class="progress" style="background-color: #f1f1f1;" id="progress"></div>
+                    <div class="progress" style="background-color: #0f4081;" id="progress"></div>
                 </div>
                 <span id="durTime" class="time-display duration-time">00:00</span>
             </div>
@@ -188,14 +196,14 @@
         <div class="container">
             <div class="even-columns">
                 <div>
-                    <a href="index.html"><img draggable="false" src="img/logo/_.svg" style="height: 10svh;" alt="home"></a>
+                    <a href="index.html"><img src="img/artist/.svg" draggable="false" loading="lazy" style="height: 10svh;" alt="home"></a>
                     <ul class="center">
-                        <li><button type="button"><a title="facebook" href="https://www.facebook.com/" target="_blank"><img class="icon" src="img/icon/facebook.svg" alt="facebook"></a></button></li>
-                        <li><button type="button"><a title="instagram" href="https://www.instagram.com//" target="_blank"><img class="icon" src="img/icon/instagram.svg" alt="instagram"></a></button></li>
-                        <li><button type="button"><a title="twitter" href="https://twitter.com/" target="_blank"><img class="icon" src="img/icon/twitter.svg" alt="X"></a></button></li>
-                        <li><button type="button"><a title="twitter" href="https://bsky.app/profile/.bsky.social" target="_blank"><img class="icon" src="img/icon/bluesky.svg" alt="bluesky"></a></button></li>
-                        <li><button type="button"><a title="discord" href="https://discord.gg/" target="_blank"><img class="icon" src="img/icon/youtube.svg" alt="youtube"></a></button></li>
-                        <li><button type="button"><a title="soundcloud" href="https://soundcloud.com/" target="_blank"><img class="icon" src="img/icon/spotify.svg" alt="spotify"></a></button></li>
+                        <li><a title="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon/facebook.svg" class="icon" loading="lazy" alt="facebook"></a></li>
+                        <li><a title="instagram" href="https://www.instagram.com//" target="_blank" rel="noopener noreferrer"><img src="img/icon/instagram.svg" class="icon" loading="lazy" alt="instagram"></a></li>
+                        <li><a title="twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon/twitter.svg" class="icon" loading="lazy" alt="X"></a></li>
+                        <li><a title="twitter" href="https://bsky.app/profile/.bsky.social" target="_blank" rel="noopener noreferrer"><img src="img/icon/bluesky.svg" class="icon" loading="lazy" alt="bluesky"></a></li>
+                        <li><a title="discord" href="https://discord.gg/" target="_blank" rel="noopener noreferrer"><img src="img/icon/discord.svg" class="icon" loading="lazy" alt="discord"></a></li>
+                        <li><a title="soundcloud" href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer"><img src="img/icon/soundcloud.svg" class="icon" loading="lazy" alt="soundcloud"></a></li>
                     </ul>
                 </div>
                 <div>
@@ -215,11 +223,11 @@
                 </div>
                 <div style="display: flex; flex-direction: column;">
                     <form action="/sign_up.php">
-                        <label for="email">Join Artist Names's mailing list for updates and discounts.</label><br>
+                        <label for="email">Join Artist Name  | s's mailing list for updates and discounts.</label><br>
                         <input type="email" id="email" name="email">
                         <input type="submit">
                     </form>
-                    <p>&copy; Artist Name</p>
+                    <p>&copy; Artist Name  | </p>
                 </div>
             </div>
         </div>

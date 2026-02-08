@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1.0">
-    <meta name="facebook-domain-verification" content="9si79xn9j040iwceek1vxp739rvzul">
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/mbar.css">
-    <link rel="stylesheet" href="link" rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap">
-    <link rel="shortcut icon" type="image/x-icon" href="../img/icon/YD-L.ico?">
-    <title>the Silent few</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon/icon.ico?">
+    <title>Artist Name | Album 2</title>
 </head>
 <body>
     <header class="primary-header">
         <div id="main-nav" role="navigation" aria-label="Main">
             <nav>
                 <ul class="nav-list" id="primary-nav">
-                    <li><button type="button"><a title="Home" href="../index.html"><img style="width: 3em;" src="../img/ypliet/YD.svg" alt="Home"></a></button></li>
+                    <li><a title="Home" href="../index.html"><img style="width: 3em;" src="../img/ypliet/YD.svg" alt="Home"></a></li>
                     <li><a class="nav-link" href="../music.html">Music</a></li>
                     <li><a class="nav-link" href="../merch.html">Merch</a></li>
                     <li><a class="nav-link" href="../shows.html">Shows</a></li>
@@ -26,14 +25,19 @@
         </div>
     </header>
     <main>
-        <div id="insomnia_album" class="padding-block-700 shelf">
+        <div id="album-2" class="padding-block-700 shelf">
             <div id="bio" class="uneven-columns">
                 <div class="fullscreen-paragraph">
-                    <p>"Album Title" (2002) made people look in that direction.</p>
+                    <p>"Album Title" (2002) made people look in that direction.  The more I write about a song or album, 
+                        the easier it becomes to sell a song to a search engine. Search engines cannot hear 
+                        music. I have to use the tempo, genre, feeling, purpose, and sentimental value 
+                        of the works to tie my music to the most accurate search results. In 2-6 months, 
+                        my 300 to 500 word summary will update in google and reach my intended audience 
+                        for free.</p>
                 </div>
                 <div class="even-columns center">
                     <div class="container"><dl>Click here to support:</dl></div>
-                    <div><button type="button"><a href="https://yplietdenour.com/music"><img style="max-width: 15rem;" src="../img/art/eateotthecaretaker.jpg"></a></button></div>
+                    <div><a href="https://artistname.com/music"><img style="max-width: 15rem;" src="../img/art/eateotthecaretaker.jpg"></a></div>
                 </div><br>
             </div><hr>
 
@@ -48,10 +52,10 @@
                     </div>
                     <div>
                         <dl id="tracklist" style="font-weight: 500;"><u>Tracklist</u></dl>
-                        <ol id="track-click">
+                        <ol id="track-click-playlist">
                             <li data-index="0">Like That</li>
-                            <li data-index="1">Beat Goes</li>
-                            <li data-index="2">XLR8</li>
+                            <li data-index="1">Rainbow Chaser</li>
+                            <li data-index="2">Inferno Drive</li>
                         </ol>
                     </div>
                 </div><br>
@@ -66,18 +70,18 @@
 
         <p>Discover more<hr style="width: fit-content;"></p><br>
         <div class="listing padding-block-700" id="discography">
-            <div class="center"><button type="button"><a href="../music/album_1.html"><image style="max-width: 12.5rem;" src="../img/art/bottomlesspitdeathgrips.jpg" alt="album 1"></a></button></div>
-            <div class="center"><button type="button"><a href="../music/album_2.html"><image style="max-width: 12.5rem;" src="../img/art/eateotthecaretaker.jpg" alt="album 2"></a></button></div>
-            <div class="center"><button type="button"><a href="../music/album_3.html"><image style="max-width: 12.5rem;" src="../img/art/afterfilmorecountyvansire.jpg" alt="album 3"></a></button></div>
+            <div class="center"><a href="../music/album_1.html"><image style="max-width: 12.5rem;" src="../img/art/bottomlesspitdeathgrips.jpg" alt="album 1"></a></div>
+            <div class="center"><a href="../music/album_2.html"><image style="max-width: 12.5rem;" src="../img/art/eateotthecaretaker.jpg" alt="album 2"></a></div>
+            <div class="center"><a href="../music/album_3.html"><image style="max-width: 12.5rem;" src="../img/art/afterfilmorecountyvansire.jpg" alt="album 3"></a></div>
         </div><br>
         
-        <!-- Leave audio tags blank. Add songs inside "music-bar.js" file. This is the part that uses javascript. -->
-        <div id='music-bar' class="music-bar" loading="lazy">
+        <!-- Read "what am i looking at" in /.help-documentation -->
+        <div class="music-bar">
             <div class="music-container" id="music-container">
                 <audio id="audio"></audio>
                 <div id="info-container" class="info-container">
                     <div class="img-container">
-                        <img id="cover" alt="Album cover">
+                        <img id="cover" src="../img/art/insomnia.jpg" alt="Album cover">
                     </div>
                     <div class="song-info">
                         <h4 id="title"></h4>
@@ -86,8 +90,11 @@
                 </div>
                 <div id="controls-container">
                     <div>
-                        <div id="navigation container" class="nav-container">
+                        <div id="navigation-container" class="nav-container">
                             <div class="navigation">
+                                <button id="shuffle" class="action-btn">
+                                    <i class="fas fa-random"><img src="../img/icon/shuffle.svg" style="height: 0.75em;" alt="shuffle"></i>
+                                </button>
                                 <button id="prev" class="action-btn">
                                     <i class="fas fa-backward"><img src="../img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
                                 </button>
@@ -97,38 +104,42 @@
                                 <button id="next" class="action-btn">
                                     <i class="fas fa-forward"><img src="../img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
                                 </button>
+                                <button id="repeat" class="action-btn">
+                                    <i class="fas fa-redo"><img src="../img/icon/repeat.svg" style="height: 0.75em;" alt="repeat"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="funnel-container" class="funnel">
-                    <p>buy here</p>
+                    <i class=""><img src="../img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy"></i>
                 </div>
             </div>
             <div class="progress-wrapper">
                 <span id="currTime" class="time-display current-time">00:00</span>
                 <div class="progress-container" id="progress-container">
-                    <div class="progress" style="background-color: #f1f1f1;" id="progress"></div>
+                    <div class="progress" style="background-color: #9da0ff;" id="progress"></div>
                 </div>
                 <span id="durTime" class="time-display duration-time">00:00</span>
             </div>
         </div>
         <script src="../scripts/music-bar.js"></script>
     </main>
+
     <!-- the bottom part -->
     </main>
     <footer loading="lazy" class="text-neutral-100" id="footer">
-        <hr>
         <div class="container">
             <div class="even-columns">
                 <div>
-                    <a href="../index.html"><img src="../img/ypliet/ypliet_denour_logo_linear_V1.svg" style="height: 10svh;" alt="home"></a>
+                    <a href="../index.html"><img src="../img/logo/your-logo.svg" style="height: 10svh;" alt="home"></a>
                     <ul class="center">
-                        <li><button type="button"><a title="facebook" href="https://www.facebook.com/yplietdenour" target="_blank"><img class="icon" src="../img/icon/facebook.svg" alt="facebook"></a></button></li>
-                        <li><button type="button"><a title="instagram" href="https://www.instagram.com/yplietdenour/" target="_blank"><img class="icon" src="../img/icon/instagram.svg" alt="instagram"></a></button></li>
-                        <li><button type="button"><a title="twitter" href="https://twitter.com/yplietdenour" target="_blank"><img class="icon" src="../img/icon/twitter.svg" alt="twitter"></a></button></li>
-                        <li><button type="button"><a title="discord" href="https://discord.gg/JT3PsUjxNv" target="_blank"><img class="icon" src="../img/icon/discord.svg" alt="discord"></a></button></li>
-                        <li><button type="button"><a title="soundcloud" href="https://soundcloud.com/yplietdenour" target="_blank"><img class="icon" src="../img/icon/soundcloud.svg" alt="soundcloud"></a></button></li>
+                        <li><a title="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="../img/icon/facebook.svg" class="icon" loading="lazy" alt="facebook"></a></li>
+                        <li><a title="instagram" href="https://www.instagram.com//" target="_blank" rel="noopener noreferrer"><img src="../img/icon/instagram.svg" class="icon" loading="lazy" alt="instagram"></a></li>
+                        <li><a title="twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img src="../img/icon/twitter.svg" class="icon" loading="lazy" alt="X"></a></li>
+                        <li><a title="twitter" href="https://bsky.app/profile/.bsky.social" target="_blank" rel="noopener noreferrer"><img src="../img/icon/bluesky.svg" class="icon" loading="lazy" alt="bluesky"></a></li>
+                        <li><a title="discord" href="https://discord.gg/" target="_blank" rel="noopener noreferrer"><img src="../img/icon/discord.svg" class="icon" loading="lazy" alt="discord"></a></li>
+                        <li><a title="soundcloud" href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer"><img src="../img/icon/soundcloud.svg" class="icon" loading="lazy" alt="soundcloud"></a></li>
                     </ul>
                 </div>
                 <div>

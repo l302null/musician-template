@@ -2,12 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1.0">
-    <meta name="facebook-domain-verification" content="9si79xn9j040iwceek1vxp739rvzul">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mbar.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon/your-ico.ico?">
-    <title>Artist Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon/icon.ico?">
+    <title>Artist Name  | </title>
 </head>
 <body>
     <header class="primary-header">
@@ -16,9 +18,9 @@
             <button class="mobile-nav-toggle">
                 <img class="menu-open" src="img/ypliet/ypliet denour logo linear V1.svg" alt="Ypliet Denour">
                 <img class="menu-close" src="img/icon/icons8-email-96.png">
-            </button>
+            
             <ul class="nav-list" id="primary-nav">
-                <li><button type="button"><a title="Home" href="index.html"><img style="width: 3em;" src="img/ypliet/yd.svg" alt="Home"></a></button></li>
+                <li><a title="Home" href="index.html"><img style="width: 3em;" src="img/ypliet/yd.svg" alt="Home"></a></li>
                 <li><a class="nav-link" href="music.html">Music</a></li>
                 <li><a class="nav-link" href="merch.html">Merch</a></li>
                 <li><a class="nav-link" href="shows.html">Shows</a></li>
@@ -27,7 +29,7 @@
         </div>
     </header>
     <head>
-        <h1 hidden>Ypliet Denour</h1>
+        <h1>Ypliet Denour</h1>
     </head>
     <main>
         <a href="https://www.songkick.com/artists/10305932" class="songkick-widget" data-theme="dark" data-track-button="on" data-detect-style="on" 
@@ -49,44 +51,50 @@
             </div>
         </section>
                 
-        <!-- Leave audio tags blank. Add songs inside "music-bar.js" file. This is the part that uses javascript. -->
-        <div id='music-bar' class="music-bar" loading="lazy">
+        <!-- Read "what am i looking at" in /.help-documentation -->
+        <div class="music-bar">
             <div class="music-container" id="music-container">
                 <audio id="audio"></audio>
                 <div id="info-container" class="info-container">
                     <div class="img-container">
-                        <img id="cover" alt="Album cover">
+                        <img id="cover" src="img/art/syncpurge.jpg" loading="lazy" alt="Album cover">
                     </div>
                     <div class="song-info">
                         <h4 id="title"></h4>
-                        <h5 id="artist"></h5>
+                        <p id="artist" style="margin: 0rem;">Ypliet Denour</p>
                     </div>
                 </div>
                 <div id="controls-container">
                     <div>
-                        <div id="navigation container" class="nav-container">
+                        <div id="navigation-container" class="nav-container">
                             <div class="navigation">
+                                <button id="shuffle" class="action-btn">
+                                    <i class="fas fa-random"><img src="img/icon/shuffle.svg" style="width: 0.85em;" alt="shuffle"></i>
+                                </button>
                                 <button id="prev" class="action-btn">
-                                    <i class="fas fa-backward"><img src="../img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
+                                    <i class="fas fa-backward"><img src="img/icon/rewind.svg" style="height: 0.75em;" alt="rewind"></i>
                                 </button>
                                 <button id="play" class="action-btn action-btn-big">
-                                    <i class="fas fa-play"><img src="../img/icon/play.svg" style="height: 1em;" alt="play"></i>
+                                    <i class="fas fa-play"><img src="img/icon/play.svg" style="height: 1em;" alt="play"></i>
                                 </button>
                                 <button id="next" class="action-btn">
-                                    <i class="fas fa-forward"><img src="../img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                    <i class="fas fa-forward"><img src="img/icon/skip.svg" style="height: 0.75em;" alt="skip"></i>
+                                </button>
+                                <button id="repeat" class="action-btn">
+                                    <i class="fas fa-repeat "><img src="img/icon/repeat.svg" style="height: 0.85em;" alt="repeat"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="funnel-container" class="funnel">
-                    <i class=""><img src="../img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy">
+                    <i class=""><img src="img/icon/buy.svg" style="height: 1.15em; padding-right: 2rem;" alt="buy"></i>
                 </div>
             </div>
             <div class="progress-wrapper">
                 <span id="currTime" class="time-display current-time">00:00</span>
                 <div class="progress-container" id="progress-container">
-                    <div class="progress" style="background-color: #f1f1f1;" id="progress"></div>
+                    <div class="progress" style="background-color: #0f4081;" id="progress"></div>
                 </div>
                 <span id="durTime" class="time-display duration-time">00:00</span>
             </div>
@@ -99,12 +107,12 @@
                 <div>
                     <a href="index.html"><img src="img/logo/_.svg" style="height: 10svh;" alt="home"></a>
                     <ul class="center">
-                        <li><button type="button"><a title="facebook" href="https://www.facebook.com/yplietdenour" target="_blank"><img class="icon" src="img/icon/facebook.svg" alt="facebook"></a></button></li>
-                        <li><button type="button"><a title="instagram" href="https://www.instagram.com/yplietdenour/" target="_blank"><img class="icon" src="img/icon/instagram.svg" alt="instagram"></a></button></li>
-                        <li><button type="button"><a title="twitter" href="https://twitter.com/yplietdenour" target="_blank"><img class="icon" src="img/icon/twitter.svg" alt="X"></a></button></li>
-                        <li><button type="button"><a title="twitter" href="https://bsky.app/profile/yplietdenour.bsky.social" target="_blank"><img class="icon" src="img/icon/bluesky.svg" alt="bluesky"></a></button></li>
-                        <li><button type="button"><a title="discord" href="https://discord.gg/JT3PsUjxNv" target="_blank"><img class="icon" src="img/icon/discord.svg" alt="discord"></a></button></li>
-                        <li><button type="button"><a title="soundcloud" href="https://soundcloud.com/yplietdenour" target="_blank"><img class="icon" src="img/icon/soundcloud.svg" alt="soundcloud"></a></button></li>
+                        <li><a title="facebook" href="https://www.facebook.com/" target="_blank"><img class="icon" src="img/icon/facebook.svg" alt="facebook"></a></li>
+                        <li><a title="instagram" href="https://www.instagram.com//" target="_blank"><img class="icon" src="img/icon/instagram.svg" alt="instagram"></a></li>
+                        <li><a title="twitter" href="https://twitter.com/" target="_blank"><img class="icon" src="img/icon/twitter.svg" alt="X"></a></li>
+                        <li><a title="twitter" href="https://bsky.app/profile/.bsky.social" target="_blank"><img class="icon" src="img/icon/bluesky.svg" alt="bluesky"></a></li>
+                        <li><a title="discord" href="https://discord.gg/" target="_blank"><img class="icon" src="img/icon/discord.svg" alt="discord"></a></li>
+                        <li><a title="soundcloud" href="https://soundcloud.com/" target="_blank"><img class="icon" src="img/icon/soundcloud.svg" alt="soundcloud"></a></li>
                     </ul>
                 </div>
                 <div>
