@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /php/
+Disallow: /scripts/
+
+Sitemap: https://yplietdenour.com/sitemap.xml
